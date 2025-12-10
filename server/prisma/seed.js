@@ -16,6 +16,14 @@ async function main() {
     },
   });
 
+  // Clear existing data
+  await prisma.bookingStay.deleteMany({});
+  await prisma.bookingAttraction.deleteMany({});
+  await prisma.photo.deleteMany({});
+  await prisma.favorite.deleteMany({});
+  await prisma.stay.deleteMany({});
+  await prisma.attraction.deleteMany({});
+
   // Create Stays
   const stays = [
     {
@@ -27,35 +35,48 @@ async function main() {
       description: 'Iconic hotel in the center of Tashkent.',
       rating: 4.5,
       amenities: JSON.stringify(['Wi-Fi', 'Breakfast', 'Pool', 'Gym']),
-      images: JSON.stringify(['https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Hotel_Uzbekistan.jpg/1200px-Hotel_Uzbekistan.jpg']),
+      images: JSON.stringify(['/images/hotelImages/UzbHotel.jpeg']),
       latitude: 41.3111,
       longitude: 69.2797
     },
     {
-      name: 'Bibi-Khanym Hotel',
+      name: 'Khiva Place',
+      city: 'Khiva',
+      type: 'hotel',
+      price_per_night: 90.0,
+      address: 'Old City, Khiva',
+      description: 'Beautiful hotel with traditional architecture in Khiva.',
+      rating: 4.7,
+      amenities: JSON.stringify(['Wi-Fi', 'Breakfast', 'Terrace']),
+      images: JSON.stringify(['/images/hotelImages/KhivaPlaseHotel.jpg']),
+      latitude: 41.3783,
+      longitude: 60.3639
+    },
+    {
+      name: 'Shaxrizoda Hotel',
       city: 'Samarkand',
       type: 'hotel',
-      price_per_night: 80.0,
-      address: '12 Tashkent Road, Samarkand',
-      description: 'Traditional style hotel near the Registan.',
-      rating: 4.8,
+      price_per_night: 75.0,
+      address: 'Near Registan, Samarkand',
+      description: 'Comfortable stay with easy access to historical sites.',
+      rating: 4.6,
       amenities: JSON.stringify(['Wi-Fi', 'Breakfast', 'Garden']),
-      images: JSON.stringify(['https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/6b/7c/0e/bibi-khanym-hotel.jpg?w=1200&h=-1&s=1']),
+      images: JSON.stringify(['/images/hotelImages/HotelSh.png']),
       latitude: 39.6542,
       longitude: 66.9750
     },
     {
-      name: 'Old Bukhara Guesthouse',
-      city: 'Bukhara',
-      type: 'guesthouse',
-      price_per_night: 40.0,
-      address: 'Old City, Bukhara',
-      description: 'Cozy guesthouse in the heart of the old city.',
-      rating: 4.7,
-      amenities: JSON.stringify(['Wi-Fi', 'Breakfast']),
-      images: JSON.stringify(['https://cf.bstatic.com/xdata/images/hotel/max1024x768/163456789.jpg?k=1234567890abcdef']),
-      latitude: 39.7747,
-      longitude: 64.4286
+      name: 'Ideal Hotel',
+      city: 'Tashkent',
+      type: 'hotel',
+      price_per_night: 60.0,
+      address: 'Tashkent City Center',
+      description: 'Modern amenities and excellent service.',
+      rating: 4.4,
+      amenities: JSON.stringify(['Wi-Fi', 'Parking', 'Bar']),
+      images: JSON.stringify(['/images/hotelImages/IdealHotel.png']),
+      latitude: 41.2995,
+      longitude: 69.2401
     }
   ];
 
