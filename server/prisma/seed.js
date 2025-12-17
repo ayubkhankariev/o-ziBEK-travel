@@ -94,7 +94,7 @@ async function main() {
       recommended_time: '2 hours',
       best_time: 'Sunset',
       rating: 5.0,
-      images: JSON.stringify(['https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Registan_Square_Samarkand.jpg/1200px-Registan_Square_Samarkand.jpg']),
+      images: JSON.stringify(['/images/attractions/Registan-Uzbekistan.jpg']),
       latitude: 39.6548,
       longitude: 66.9757
     },
@@ -106,7 +106,7 @@ async function main() {
       recommended_time: '1.5 hours',
       best_time: 'Morning',
       rating: 4.6,
-      images: JSON.stringify(['https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Chorsu_Bazaar_Tashkent.jpg/1200px-Chorsu_Bazaar_Tashkent.jpg']),
+      images: JSON.stringify(['/images/attractions/ChorsuBazar.jpg']),
       latitude: 41.3265,
       longitude: 69.2365
     },
@@ -118,7 +118,7 @@ async function main() {
       recommended_time: 'Half day',
       best_time: 'All day',
       rating: 4.9,
-      images: JSON.stringify(['https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Ichan_Kala_Khiva.jpg/1200px-Ichan_Kala_Khiva.jpg']),
+      images: JSON.stringify(['/images/attractions/ichan-kala.jpg']),
       latitude: 41.3783,
       longitude: 60.3639
     }

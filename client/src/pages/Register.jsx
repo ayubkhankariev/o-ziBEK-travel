@@ -25,7 +25,7 @@ const Register = () => {
       await register(formData);
       navigate('/');
     } catch (err) {
-      setError('Registration failed. Email might be taken.');
+      setError(t('registration_failed'));
     }
   };
 

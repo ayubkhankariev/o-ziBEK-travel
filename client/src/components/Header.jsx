@@ -27,7 +27,7 @@ const Header = () => {
           <select 
             onChange={(e) => changeLanguage(e.target.value)} 
             className="border rounded p-1 text-sm"
-            defaultValue={i18n.language}
+            value={i18n.language.split('-')[0]}
           >
             <option value="en">EN</option>
             <option value="ru">RU</option>

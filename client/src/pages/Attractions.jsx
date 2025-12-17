@@ -39,22 +39,22 @@ const Attractions = () => {
       {/* Filters */}
       <div className="bg-white p-4 rounded-lg shadow mb-8 flex flex-wrap gap-4 items-end">
         <div>
-          <label className="block text-sm font-medium text-gray-700">City</label>
+          <label className="block text-sm font-medium text-gray-700">{t('city')}</label>
           <select name="city" value={filters.city} onChange={handleFilterChange} className="border rounded p-2 w-40">
-            <option value="">All</option>
-            <option value="Tashkent">Tashkent</option>
-            <option value="Samarkand">Samarkand</option>
-            <option value="Bukhara">Bukhara</option>
-            <option value="Khiva">Khiva</option>
+            <option value="">{t('all')}</option>
+            <option value="Tashkent">{t('tashkent')}</option>
+            <option value="Samarkand">{t('samarkand')}</option>
+            <option value="Bukhara">{t('bukhara')}</option>
+            <option value="Khiva">{t('khiva')}</option>
           </select>
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">Category</label>
+          <label className="block text-sm font-medium text-gray-700">{t('category')}</label>
           <select name="category" value={filters.category} onChange={handleFilterChange} className="border rounded p-2 w-40">
-            <option value="">All</option>
-            <option value="Historical">Historical</option>
-            <option value="Cultural">Cultural</option>
-            <option value="Nature">Nature</option>
+            <option value="">{t('all')}</option>
+            <option value="Historical">{t('historical')}</option>
+            <option value="Cultural">{t('cultural')}</option>
+            <option value="Nature">{t('nature_only')}</option>
           </select>
         </div>
       </div>
@@ -72,9 +72,11 @@ const Attractions = () => {
             <div className="p-4">
               <div className="flex justify-between items-start">
                 <h3 className="text-xl font-bold mb-2">{attraction.name}</h3>
-                <span className="bg-accent text-black text-xs font-semibold px-2.5 py-0.5 rounded">{attraction.category}</span>
+                <span className="bg-accent text-black text-xs font-semibold px-2.5 py-0.5 rounded">
+                  {attraction.category === 'Nature' ? t('nature_only') : t(attraction.category.toLowerCase())}
+                </span>
               </div>
-              <p className="text-gray-600 mb-2">{attraction.city}</p>
+              <p className="text-gray-600 mb-2">{t(attraction.city.toLowerCase())}</p>
               <p className="text-gray-500 text-sm mb-4 line-clamp-2">{attraction.description}</p>
               <Link to={`/attractions/${attraction.id}`} className="block w-full bg-secondary text-white px-4 py-2 rounded hover:bg-green-600 transition text-center">{t('view_details')}</Link>
             </div>
